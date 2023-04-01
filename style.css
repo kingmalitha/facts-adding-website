@@ -1,1 +1,24 @@
-/* Welcome to CSS */
+/** Welcome to CSS */
+
+/* This is the CSS file for the default theme. It is used to define the look and feel of your site. You can edit this file to change the look of your site. If you want to change the look of your site without changing this file, you can create a new theme. For more information, see the documentation for the theme system. */
+
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+span {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+}
