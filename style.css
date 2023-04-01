@@ -2,25 +2,37 @@
 
 /* This is the CSS file for the default theme. It is used to define the look and feel of your site. You can edit this file to change the look of your site. If you want to change the look of your site without changing this file, you can create a new theme. For more information, see the documentation for the theme system. */
 
+body {
+  background-color: #292524;
+}
+
 h1 {
   font-size: 42px;
   text-transform: uppercase;
   text-align: center;
   font-family: "Coiny", sans-serif;
+  color: #fafaf9;
 }
 
 .fact {
   font-size: 20px;
   line-height: 1.4;
   font-family: "Sono", sans-serif;
+  color: #fafaf9;
+  background-color: #44403c;
 }
 
 .tag {
   text-transform: uppercase;
   font-size: 14px;
   font-family: "Coiny", sans-serif;
+  color: #fafaf9;
 }
 
 ul {
   list-style: none;
+}
+
+.fact-form {
+  background-color: #44403c;
 }
