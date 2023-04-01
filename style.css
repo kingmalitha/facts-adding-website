@@ -15,11 +15,28 @@ body {
   padding: 40px;
 }
 
+.header {
+  margin-bottom: 40px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 h1 {
   font-size: 42px;
   text-transform: uppercase;
   text-align: center;
   font-family: "Coiny", sans-serif;
+  line-height: 1;
+  margin-top: 6px;
 }
 
 .fact {
@@ -51,8 +68,4 @@ ul {
   background-color: #44403c;
   margin-bottom: 40px;
   text-align: center;
-}
-
-.header {
-  margin-bottom: 40px;
 }
