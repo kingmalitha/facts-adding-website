@@ -21,3 +21,5 @@ function calcFactAge(year) {
   const age = currentYear - year;
   return age;
 }
+
+//Learn about if statements
