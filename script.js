@@ -14,7 +14,10 @@ btn.addEventListener("click", () => {
 });
 
 let votesInteresting = 23;
-let voteMindblowing = 5;
+let votesMindblowing = 5;
+let votesFalse = 4;
+
+let totalUpvotes = votesInteresting + votesMindblowing;
 
 function calcFactAge(year) {
   const currentYear = new Date().getFullYear();
@@ -23,3 +26,9 @@ function calcFactAge(year) {
 }
 
 //Learn about if statements
+//learn about ternary operator
+
+const message =
+  totalUpvotes > votesFalse
+    ? "The fact is True"
+    : "Might be false, check more sources...";
