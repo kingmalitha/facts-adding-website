@@ -32,3 +32,5 @@ const message =
   totalUpvotes > votesFalse
     ? "The fact is True"
     : "Might be false, check more sources...";
+
+//working with strings
