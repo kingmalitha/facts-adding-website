@@ -37,3 +37,21 @@ const message =
 
 //Arrow Functions
 //Arrays
+
+//Object
+const factObj = {
+  text: "Hello world, this is king",
+  category: "society",
+  createdIn: 2015,
+  isCorrect: true,
+  createSummary: function () {
+    return `${this.text} was created in ${this.createdIn}`;
+  },
+};
+
+console.log(factObj.text);
+console.log(factObj["text"]);
+
+const { category, isCorrect } = factObj;
+console.log(category);
+console.log(factObj.createSummary());
