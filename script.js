@@ -15,3 +15,9 @@ btn.addEventListener("click", () => {
 
 let votesInteresting = 23;
 let voteMindblowing = 5;
+
+function calcFactAge(year) {
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - year;
+  return age;
+}
