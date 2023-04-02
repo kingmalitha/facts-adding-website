@@ -47,22 +47,13 @@ const initialFacts = [
 ];
 
 function App() {
+  //  1. define state variable
   const [showForm, setShowForm] = useState(false);
 
   return (
     <>
-      <header className="header">
-        <div className="logo">
-          <img src="logo.png" height="68" width="68" alt="main-logo" />
-          <h1>Today I Learned!</h1>
-        </div>
-        <button
-          className="btn btn-large btn-open"
-          onClick={() => setShowForm((show) => !show)}
-        >
-          Share a fact
-        </button>
-      </header>
+      <Header showForm={showForm} setShowForm={setShowForm} />
+      {/* 2. use state variable */}
       {showForm ? <NewFactForm /> : null}
 
       <main className="main">
@@ -70,6 +61,25 @@ function App() {
         <FactList />
       </main>
     </>
+  );
+}
+function Header({ showForm, setShowForm }) {
+  const appTitle = "Today I Learned";
+  return (
+    <header className="header">
+      <div className="logo">
+        <img src="logo.png" height="68" width="68" alt="main-logo" />
+        <h1>{appTitle}</h1>
+      </div>
+      <button
+        className="btn btn-large btn-open"
+        //3. Set state variable
+        onClick={() => setShowForm((show) => !show)}
+        // In here we have to get the value of previous state, so we have to add callback function to setShowForm.
+      >
+        {showForm ? "close" : "Share a fact"}
+      </button>
+    </header>
   );
 }
 
