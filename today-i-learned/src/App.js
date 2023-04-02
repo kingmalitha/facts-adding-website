@@ -49,16 +49,19 @@ const initialFacts = [
 function App() {
   //  1. define state variable
   const [showForm, setShowForm] = useState(false);
+  const [facts, setFacts] = useState(initialFacts);
 
   return (
     <>
       <Header showForm={showForm} setShowForm={setShowForm} />
       {/* 2. use state variable */}
-      {showForm ? <NewFactForm /> : null}
+      {showForm ? (
+        <NewFactForm setFacts={setFacts} setShowForm={setShowForm} />
+      ) : null}
 
       <main className="main">
         <CategoryFilters />
-        <FactList />
+        <FactList facts={facts} setFacts={setFacts} />
       </main>
     </>
   );
@@ -93,35 +96,43 @@ function isVaildHttpUrl(string) {
   return url.protocol === "http" || url.protocol === "https:";
 }
 
-function NewFactForm() {
+function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("");
   const [category, setCategory] = useState("");
   const textLength = text.length;
 
   function handleSubmit(e) {
+    console.log("Hello");
     //1.) Prevent browser reload the page
     e.preventDefault();
 
     //2.) Check if data is vaild. If so,create a new fact.
     if (text && isVaildHttpUrl(source) && category && textLength <= 200) {
+      console.log("Hello 2");
       //3.) Create a new fact object
+
       const newFact = {
-        id: 1,
+        id: Math.round(Math.random() * 10000000),
         text,
         source,
         category,
-        votesInteresting: 24,
-        votesMindblowing: 9,
-        votesFalse: 4,
-        createdIn: new Date().getCurrentYear(),
+        votesInteresting: 0,
+        votesMindblowing: 0,
+        votesFalse: 0,
+        createdIn: new Date().getFullYear(),
       };
 
       //4.) Add the new fact to the UI: add the fact to state
+      setFacts((facts) => [newFact, ...facts]);
 
       //5.) Reset input fields
+      setText("");
+      setSource("");
+      setCategory("");
 
       //6.) Close the form
+      setShowForm(false);
     }
   }
 
@@ -175,10 +186,7 @@ function CategoryFilters() {
   );
 }
 
-function FactList() {
-  //TEMPORARY
-  const facts = initialFacts;
-
+function FactList({ facts, setFacts }) {
   return (
     <section>
       <ul className="facts-list">
