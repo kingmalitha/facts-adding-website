@@ -36,3 +36,4 @@ const message =
 //working with strings
 
 //Arrow Functions
+//Arrays
