@@ -45,6 +45,8 @@ const initialFacts = [
   },
 ];
 
+//Use State
+
 function App() {
   return (
     <>
@@ -55,7 +57,6 @@ function App() {
         </div>
         <button className="btn btn-large btn-open">Share a fact</button>
       </header>
-
       <NewFactForm />
 
       <main className="main">
