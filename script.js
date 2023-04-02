@@ -34,3 +34,5 @@ const message =
     : "Might be false, check more sources...";
 
 //working with strings
+
+//Arrow Functions
